@@ -1,5 +1,5 @@
 {% set name = "pointpats" %}
-{% set version = "2.0.0" %}
+{% set version = "2.1.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 3aaceb5576b8a587e5b8b81877dfd0b87439a199e8a813af27086effbd9ed673
+  sha256: dd210a01f634895d8272f89829613333b4158e9705310fa768ae6862b5737eb6
 
 build:
   noarch: python
