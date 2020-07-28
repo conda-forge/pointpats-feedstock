@@ -1,5 +1,5 @@
 {% set name = "pointpats" %}
-{% set version = "2.1.0" %}
+{% set version = "2.2.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,12 +7,12 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: dd210a01f634895d8272f89829613333b4158e9705310fa768ae6862b5737eb6
+  sha256: b844b18eb5184e8b3e98f97790bd3f0bc28cf20c164d858c1b7cfd09eddb2422
 
 build:
   noarch: python
-  number: 1
-  script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv"
+  number: 0
+  script: {{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv
 
 requirements:
   host:
@@ -35,7 +35,7 @@ about:
   license: BSD-3-Clause
   license_family: BSD
   license_file: LICENSE.txt
-  summary: 'Statistical analysis of planar point patterns.'
+  summary: Statistical analysis of planar point patterns.
 
   description: |
     This pointpats package is intended to support the statistical analysis
