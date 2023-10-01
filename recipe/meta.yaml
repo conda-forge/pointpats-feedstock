@@ -1,5 +1,5 @@
 {% set name = "pointpats" %}
-{% set version = "2.3.0" %}
+{% set version = "2.4.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/pointpats-{{ version }}.tar.gz
-  sha256: de390f450f4b83f343855f67de15bc85228d9bee2fcecf80851dd01e47c1b556
+  sha256: df6344e19136d7256abc99aaac404be961ae6f5c316fa05ca1b6e17892c59e27
 
 build:
   noarch: python
@@ -26,6 +26,8 @@ requirements:
     - pandas
     - python >=3.6
     - scipy >=0.11
+    - shapely >=2.0
+    - geopandas
 
 test:
   imports:
