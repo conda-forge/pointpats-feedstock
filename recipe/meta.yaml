@@ -18,6 +18,8 @@ requirements:
   host:
     - pip
     - python >=3.6
+    - setuptools >=61.0
+    - setuptools-scm >=6.2
   run:
     - libpysal >=4.0.0
     - matplotlib-base
