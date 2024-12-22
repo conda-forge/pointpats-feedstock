@@ -1,3 +1,4 @@
+{% set python_min = '3.10' %}
 {% set name = "pointpats" %}
 {% set version = "2.5.1" %}
 
@@ -6,18 +7,18 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/pointpats-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/pointpats-{{ version }}.tar.gz
   sha256: 1eedb30a17e59746ed9ac68283f419dee5a07c17cd53ed2bc2dadba2b77973ff
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
 
 requirements:
   host:
     - pip
-    - python >=3.10
+    - python {{ python_min }}
     - setuptools >=61.0
     - setuptools-scm >=6.2
   run:
@@ -25,12 +26,14 @@ requirements:
     - matplotlib-base >=3.6
     - numpy >=1.24
     - pandas
-    - python >=3.10
+    - python >={{ python_min }}
     - scipy >=1.10
     - shapely >=2.0
     - geopandas >0.12
 
 test:
+  requires:
+    - python {{ python_min }}
   imports:
     - pointpats
   # conda-forge does not have an opencv-contrib-python package yet
